@@ -1,0 +1,10 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div formArrayName="hobbies">
+      <div *ngFor="let hobby of hobbies.controls; let i=index">
+        <input [formControlName]="i" placeholder="hobbie">
+        <button type="button" (click)="removeHobby(i)">Remove</button>
+      </div>
+    </div>
+    <button type="button" (click)="addHobby()">Add Hobby</button>
+    <button type="submit">Submit</button>
+  </form>
